@@ -24,9 +24,15 @@
 #arrowTop,#arrowBot{
     position: absolute;
     transform: translate(50% 50%);
-    background-color: rgba(255, 255, 255, 0.733);
+    background-color: rgba(255, 255, 255, 0.832);
     border-radius: 50%;
     padding: 1px 4px;
+
+}
+
+#arrowTop:hover,#arrowBot:hover{
+    cursor: pointer;
+    transform: scale(1.2);
 
 }
 
@@ -48,7 +54,8 @@
 #scrolBar{
     width: 150px;
     height: 100%;
-    
+    display: flex;
+    flex-direction: column;
     position: absolute;
     right: 0;
     
@@ -56,11 +63,11 @@
 
 .img-scrol{
 
-    height: calc(100% / 5 - 13px / 4);
+    height: calc(100% / 5 );
     opacity: 0.50;
     
 }
 .active{
     opacity: 1;
-    border: 1px solid black;
+    border: 3px solid black;
 }
