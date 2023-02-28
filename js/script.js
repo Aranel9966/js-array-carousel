@@ -18,3 +18,28 @@ Aggiungere la visualizzazione di tutte le thumbnails sulla destra dell’immagin
 Al click delle frecce, oltre al cambio di immagine attiva, gestire il cambio di miniatura attiva.
 */
 
+/*
+-> array di immagini
+-> variabili dei bottoni
+-> variabili img
+-> evento click per spostarsi tra le variabili dell' array top
+-> evento click per spostarsi tra le variabili dell' array bot
+
+*/
+
+
+const images = ['https://images2-milano.corriereobjects.it/methode_image/2022/03/14/Milano/Foto%20Milano%20-%20Trattate/Settimio%20Benedusi-kkDH-U3330521700195KQE-656x492@Corriere-Web-Milano.jpg?v=20220314124537',
+'https://i0.wp.com/www.giacomocusano.com/wp-content/uploads/2016/07/coastal-wash-web.jpg?fit=1024%2C682&ssl=1',
+'https://cdn.pixabay.com/photo/2016/10/21/14/50/plouzane-1758197__480.jpg',
+'https://a-static.besthdwallpaper.com/lighthouse-at-sunset-wallpaper-2048x1536-28429_26.jpg',
+
+]
+
+// console.log(Images)
+
+let arrowTopEl = document.getElementById('arrowTop');
+let arrowBotEl = document.getElementById('arrowBot');
+let imgEl = document.getElementById('img');
+let index = 0;
+
+imgEl.src=images.at(index);
