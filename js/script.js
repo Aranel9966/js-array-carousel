@@ -35,11 +35,34 @@ const images = ['https://images2-milano.corriereobjects.it/methode_image/2022/03
 
 ]
 
-// console.log(Images)
-
 let arrowTopEl = document.getElementById('arrowTop');
 let arrowBotEl = document.getElementById('arrowBot');
 let imgEl = document.getElementById('img');
 let index = 0;
 
 imgEl.src=images.at(index);
+
+// creo evento per le frecce
+arrowTopEl.addEventListener('click',function(){
+
+    // diminuisco l'index 
+    index--;
+
+    imgEl.src=images.at(index);
+
+    if(-4 == index){
+        index=0
+    }
+})
+arrowBotEl.addEventListener('click',function(){
+
+    // aumento l'index 
+    index++;
+
+    imgEl.src=images.at(index);
+
+    if(images.length-1 == index){
+        index=0
+    }
+    
+})
