@@ -28,10 +28,7 @@ Al click delle frecce, oltre al cambio di immagine attiva, gestire il cambio di 
 */
 
 
-const images = ['https://images2-milano.corriereobjects.it/methode_image/2022/03/14/Milano/Foto%20Milano%20-%20Trattate/Settimio%20Benedusi-kkDH-U3330521700195KQE-656x492@Corriere-Web-Milano.jpg?v=20220314124537',
-'https://i0.wp.com/www.giacomocusano.com/wp-content/uploads/2016/07/coastal-wash-web.jpg?fit=1024%2C682&ssl=1',
-'https://cdn.pixabay.com/photo/2016/10/21/14/50/plouzane-1758197__480.jpg',
-'https://a-static.besthdwallpaper.com/lighthouse-at-sunset-wallpaper-2048x1536-28429_26.jpg',
+const images = ['img/01.webp','img/02.webp','img/03.webp','img/04.webp','img/05.webp',
 ]
 
 let arrowTopEl = document.getElementById('arrowTop');
@@ -41,55 +38,6 @@ let scrolBarEl = document.getElementById('scrolBar');
 let index = 0;
 
 // prendo tutte le img
-
-
-imgEl.src=images.at(index);
-
-// let select = document.querySelectorAll('.img-scrol')
-
-// select[index].classList.add('active');
-
-// creo evento per le frecce
-arrowTopEl.addEventListener('click',function(){
-
-    // diminuisco l'index 
-    index--;
-
-    imgEl.src=images.at(index);
-
-    if(-4 == index){
-        index=0;
-    };
-    console.log(index)
-
-    // select[index].classList.add('active');
-    // select[index-1].classList.remove('active');
-
-})
-
-
-
-
-arrowBotEl.addEventListener('click',function(){
-
-    // aumento l'index 
-    
-    index++;
-    
-    if(index==4){
-        index=0;
-    }else if(4 <= index){
-        index=1
-    };
-
-    imgEl.src=images.at(index);
-
-    console.log(index)
-
-    
-})
-
-
 for(let i = 0; i < images.length ; i++){
 
     let scrolImg = document.createElement('img');
@@ -98,8 +46,59 @@ for(let i = 0; i < images.length ; i++){
 
     scrolBarEl.append(scrolImg);
     
-    scrolImg.src=images.at(index);
-
-    index++;
+    scrolImg.src=images[i];
 
 }
+
+imgEl.src=images[index];
+
+
+const select = document.querySelectorAll(".img-scrol");
+select[index].classList.add('active')
+
+
+// creo evento per le frecce
+arrowTopEl.addEventListener('click',function(){
+    
+    
+    // diminuisco l'index 
+    select[index].classList.remove('active');
+
+    
+    if(index > 0){
+
+        index--;
+
+    }else{
+        index=4;
+    };
+
+    imgEl.src=images[index];
+
+    select[index].classList.add('active');
+    
+
+})
+
+
+arrowBotEl.addEventListener('click',function(){
+
+    // aumento l'index 
+    select[index].classList.remove('active');
+    
+
+    if(index < images.length-1){
+        index++;
+
+    }else{
+        index=0;
+    }
+
+    imgEl.src=images[index];
+
+    select[index].classList.add('active');
+    
+    
+})
+
+
