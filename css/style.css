@@ -34,13 +34,34 @@
 
 #arrowTop{
     top: 5%;
-    right: 5%;
+    right: 40%;
+    z-index: 3;
     
 }
 
 #arrowBot{
     bottom:5%;
-    right: 5%;
+    right: 40%;
+    z-index: 3;
+
 
 }
 
+#scrolBar{
+    width: 100px;
+    height: 100%;
+    
+    position: absolute;
+    right: 0;
+    
+}
+
+.img-scrol{
+    width: 100px;
+    height: calc(100% / 4 - 9px / 3);
+    opacity: 0.50;
+    
+}
+.active{
+    opacity: none;
+}

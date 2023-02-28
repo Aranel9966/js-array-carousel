@@ -32,15 +32,22 @@ const images = ['https://images2-milano.corriereobjects.it/methode_image/2022/03
 'https://i0.wp.com/www.giacomocusano.com/wp-content/uploads/2016/07/coastal-wash-web.jpg?fit=1024%2C682&ssl=1',
 'https://cdn.pixabay.com/photo/2016/10/21/14/50/plouzane-1758197__480.jpg',
 'https://a-static.besthdwallpaper.com/lighthouse-at-sunset-wallpaper-2048x1536-28429_26.jpg',
-
 ]
 
 let arrowTopEl = document.getElementById('arrowTop');
 let arrowBotEl = document.getElementById('arrowBot');
 let imgEl = document.getElementById('img');
+let scrolBarEl = document.getElementById('scrolBar');
 let index = 0;
 
+// prendo tutte le img
+
+
 imgEl.src=images.at(index);
+
+// let select = document.querySelectorAll('.img-scrol')
+
+// select[index].classList.add('active');
 
 // creo evento per le frecce
 arrowTopEl.addEventListener('click',function(){
@@ -51,18 +58,48 @@ arrowTopEl.addEventListener('click',function(){
     imgEl.src=images.at(index);
 
     if(-4 == index){
-        index=0
-    }
+        index=0;
+    };
+    console.log(index)
+
+    // select[index].classList.add('active');
+    // select[index-1].classList.remove('active');
+
 })
+
+
+
+
 arrowBotEl.addEventListener('click',function(){
 
     // aumento l'index 
+    
     index++;
+    
+    if(index==4){
+        index=0;
+    }else if(4 <= index){
+        index=1
+    };
 
     imgEl.src=images.at(index);
 
-    if(images.length-1 == index){
-        index=0
-    }
+    console.log(index)
+
     
 })
+
+
+for(let i = 0; i < images.length ; i++){
+
+    let scrolImg = document.createElement('img');
+
+    scrolImg.classList.add('img-scrol');
+
+    scrolBarEl.append(scrolImg);
+    
+    scrolImg.src=images.at(index);
+
+    index++;
+
+}
